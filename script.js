@@ -1,15 +1,19 @@
-// Initialize map at the center of Austria
-const map = L.map('map').setView([47.5162, 14.5501], 7);
+// Map points to audio files
+const audioFiles = {
+    point1: './assets/D_moment.wav',
+    point2: './assets/D2_Schiff.wav'
+};
 
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+const audioPlayer = document.getElementById('audio-player');
 
-// Add marker with an audio link
-const marker = L.marker([47.0707, 15.4395]).addTo(map);
-marker.bindPopup(`
-    <strong>Graz Dialekt</strong><br>
-    <audio controls>
-        <source src="https://drive.google.com/uc?export=download&id=YOUR_GOOGLE_DRIVE_FILE_ID" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-`);
+// Add click listeners to the points
+document.getElementById('point1').addEventListener('click', () => playAudio('point1'));
+document.getElementById('point2').addEventListener('click', () => playAudio('point2'));
+
+function playAudio(pointId) {
+    const audioSrc = audioFiles[pointId];
+    if (audioSrc) {
+        audioPlayer.src = audioSrc;
+        audioPlayer.play();
+    }
+}

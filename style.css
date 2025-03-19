@@ -1,10 +1,32 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
-#map {
-    height: 500px;
+.map-container {
+    position: relative;
     width: 100%;
-    border: 2px solid #ccc;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.map {
+    width: 100%;
+    height: auto;
+}
+
+.point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}
+
+.point:hover {
+    transform: translate(-50%, -50%) scale(1.2);
 }

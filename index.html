@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dialekt Map</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Map with Audio</title>
 </head>
 <body>
-    <h1>Dialekt Map</h1>
-    <div id="map" style="height: 500px;"></div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+<div class="map-container">
+    <img src="./assets/map_blank_with_main_cities2.png" alt="Map" class="map" />
+
+    <!-- Clickable points -->
+    <div id="point1" class="point" style="top: 48%; left: 55%;"></div>
+    <div id="point2" class="point" style="top: 60%; left: 30%;"></div>
+</div>
+
+<audio id="audio-player" controls style="display: none;"></audio>
+
+<script src="scripts.js"></script>
 </body>
 </html>
