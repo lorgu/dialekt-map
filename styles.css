@@ -12,7 +12,7 @@ body {
 }
 
 .map {
-    width: 100%;      /* Keeps the image responsive */
+    width: 150%;      /* Keeps the image responsive */
     max-width: 1600px; /* You can set this to a value larger than the current one */
     height: auto;     /* Ensures the image retains its aspect ratio */
 }
