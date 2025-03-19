@@ -7,13 +7,14 @@ body {
 .map-container {
     position: relative;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 15px auto;
 }
 
 .map {
-    width: 100%;
-    height: auto;
+    width: 100%;      /* Keeps the image responsive */
+    max-width: 1600px; /* You can set this to a value larger than the current one */
+    height: auto;     /* Ensures the image retains its aspect ratio */
 }
 
 .point {
