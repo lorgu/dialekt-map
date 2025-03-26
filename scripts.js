@@ -2,13 +2,16 @@ const bounds = {
     minLat: 46.2,
     maxLat: 49.2,
     minLon: 9.1,
-    maxLon: 17.3
+    maxLon: 17.6
 };
 
 // Map points to audio files
 const audioFiles = {
     point1: './assets/D_moment.wav',
-    point2: './assets/D2_Schiff.wav'
+    point2: './assets/D2_Schiff.wav',
+    point3: './assets/D3_Schiff.wav',
+    point4: './assets/D4_Schiff.wav',
+    point5: './assets/D5_Schiff.wav',
 };
 
 // Function to convert latitude and longitude to pixel coordinates
@@ -34,9 +37,15 @@ window.onload = function() {
 
     // Coordinates for the points (latitude, longitude)
     // Example coordinates for Graz
-    const point1Coords = { lat: 47.1, lon: 15.4 };  // Example coordinates for point1
+    const point1Coords = { lat: 47.1, lon: 15.4 };
     // Example coordinates for Linz
-    const point2Coords = { lat: 48.3, lon: 14.3 };  // Example coordinates
+    const point2Coords = { lat: 48.3, lon: 14.3 };
+    // Bregenz
+    const point3Coords = { lat: 47.5, lon: 9.8 };
+    // Innsbruck
+    const point4Coords = { lat: 47.3, lon: 11.4 };
+    // Wien
+    const point5Coords = { lat: 48.2, lon: 16.4 };
 
     // Convert coordinates to pixels
     const point1Position = latLonToPixels(point1Coords.lat, point1Coords.lon, mapWidth, mapHeight);
