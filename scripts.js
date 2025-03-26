@@ -9,9 +9,9 @@ const bounds = {
 const audioFiles = {
     point1: './assets/D_moment.wav',
     point2: './assets/D2_Schiff.wav',
-    point3: './assets/D3_Schiff.wav',
-    point4: './assets/D4_Schiff.wav',
-    point5: './assets/D5_Schiff.wav',
+    point3: './assets/D2_Schiff.wav',
+    point4: './assets/D2_Schiff.wav',
+    point5: './assets/D2_Schiff.wav',
 };
 
 // Function to convert latitude and longitude to pixel coordinates
