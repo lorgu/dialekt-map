@@ -12,6 +12,7 @@ const audioFiles = {
     point3: './assets/D2_Schiff.wav',
     point4: './assets/D2_Schiff.wav',
     point5: './assets/D2_Schiff.wav',
+    point6: './assets/10612_SF_WA_553.01.wav'
 };
 
 // Function to convert latitude and longitude to pixel coordinates
@@ -36,7 +37,8 @@ window.onload = function() {
         { id: 'point2', lat: 48.3064, lon: 14.2861 }, // Linz
         { id: 'point3', lat: 47.5039, lon: 9.7473 },  // Bregenz
         { id: 'point4', lat: 47.2680, lon: 11.3923 }, // Innsbruck
-        { id: 'point5', lat: 48.2082, lon: 16.3738 }  // Wien
+        { id: 'point5', lat: 48.2082, lon: 16.3738 },  // Wien
+        { id: 'point6', lat: 47.7118197, lon: 16.5106398} // 10612 
     ];
 
     // Loop through the points to set their position and event listener
