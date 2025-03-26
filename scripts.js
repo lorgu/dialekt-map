@@ -2,7 +2,7 @@ const bounds = {
     minLat: 46.2,
     maxLat: 49.2,
     minLon: 9.05,
-    maxLon: 17.55
+    maxLon: 17.65
 };
 
 // Map points to audio files
