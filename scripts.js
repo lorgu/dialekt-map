@@ -33,8 +33,10 @@ window.onload = function() {
     const mapHeight = mapImage.height;
 
     // Coordinates for the points (latitude, longitude)
-    const point1Coords = { lat: 48.0, lon: 12.5 };  // Example coordinates for point1
-    const point2Coords = { lat: 47.5, lon: 14.0 };  // Example coordinates for point2
+    // Example coordinates for Graz
+    const point1Coords = { lat: 47.1, lon: 15.4 };  // Example coordinates for point1
+    // Example coordinates for Linz
+    const point2Coords = { lat: 48.3, lon: 14.3 };  // Example coordinates
 
     // Convert coordinates to pixels
     const point1Position = latLonToPixels(point1Coords.lat, point1Coords.lon, mapWidth, mapHeight);
