@@ -36,16 +36,11 @@ window.onload = function() {
     const mapHeight = mapImage.height;
 
     // Coordinates for the points (latitude, longitude)
-    // Example coordinates for Graz
-    const point1Coords = { lat: 47.1, lon: 15.4 };
-    // Example coordinates for Linz
-    const point2Coords = { lat: 48.3, lon: 14.3 };
-    // Bregenz
-    const point3Coords = { lat: 47.5, lon: 9.8 };
-    // Innsbruck
-    const point4Coords = { lat: 47.3, lon: 11.4 };
-    // Wien
-    const point5Coords = { lat: 48.2, lon: 16.4 };
+    const point1Coords = { lat: 47.0707, lon: 15.4395 }; // Graz
+    const point2Coords = { lat: 48.3064, lon: 14.2861 }; // Linz
+    const point3Coords = { lat: 47.5039, lon: 9.7473 };  // Bregenz
+    const point4Coords = { lat: 47.2680, lon: 11.3923 }; // Innsbruck
+    const point5Coords = { lat: 48.2082, lon: 16.3738 }; // Wien
 
     // Convert coordinates to pixels
     const point1Position = latLonToPixels(point1Coords.lat, point1Coords.lon, mapWidth, mapHeight);
