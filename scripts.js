@@ -21,13 +21,13 @@ const map = document.querySelector('.map');
 const mapWidth = map.clientWidth;
 const mapHeight = map.clientHeight;
 
-// Define coordinates for the points
+// Define coordinates for the dynamic points
 const pointsData = [
     { id: 'point1', lat: 47.0707, lon: 15.4395, audio: './assets/D_moment.wav' },
     { id: 'point2', lat: 47.0207, lon: 15.3295, audio: './assets/D2_Schiff.wav' }
 ];
 
-// Create points dynamically
+// Create dynamic points
 pointsData.forEach(pointData => {
     const { lat, lon, id, audio } = pointData;
     const { x, y } = latLonToPixel(lat, lon, mapWidth, mapHeight, bounds);
@@ -45,6 +45,10 @@ pointsData.forEach(pointData => {
     // Add click listener to play the audio
     point.addEventListener('click', () => playAudio(audio));
 });
+
+// Add click listeners to the original points
+document.getElementById('point1').addEventListener('click', () => playAudio('./assets/D_moment.wav'));
+document.getElementById('point2').addEventListener('click', () => playAudio('./assets/D2_Schiff.wav'));
 
 const audioPlayer = document.getElementById('audio-player');
 
