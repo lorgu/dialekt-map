@@ -1,21 +1,52 @@
+const bounds = {
+    minLat: 46.0,
+    maxLat: 49.3,
+    minLon: 9.0,
+    maxLon: 17.5
+};
+
 // Map points to audio files
 const audioFiles = {
     point1: './assets/D_moment.wav',
     point2: './assets/D2_Schiff.wav'
 };
 
+// Function to convert latitude and longitude to pixel coordinates
+function latLonToPixels(lat, lon, mapWidth, mapHeight) {
+    const latRatio = (lat - bounds.minLat) / (bounds.maxLat - bounds.minLat);
+    const lonRatio = (lon - bounds.minLon) / (bounds.maxLon - bounds.minLon);
+    
+    const x = lonRatio * mapWidth;  // Horizontal position (left)
+    const y = (1 - latRatio) * mapHeight;  // Vertical position (top), 1 - latRatio because y=0 is top of the map
+
+    return { x, y };
+}
+
 window.onload = function() {
     // Get the points by their IDs
     var point1 = document.getElementById('point1');
     var point2 = document.getElementById('point2');
+    
+    // Get the map dimensions (use actual map image size)
+    const mapImage = document.querySelector('.map');
+    const mapWidth = mapImage.width;
+    const mapHeight = mapImage.height;
 
-    // Set the position of point1 (top: 48%, left: 55%)
-    point1.style.top = '48%';
-    point1.style.left = '55%';
+    // Coordinates for the points (latitude, longitude)
+    const point1Coords = { lat: 48.0, lon: 12.5 };  // Example coordinates for point1
+    const point2Coords = { lat: 47.5, lon: 14.0 };  // Example coordinates for point2
 
-    // Set the position of point2 (top: 60%, left: 30%)
-    point2.style.top = '60%';
-    point2.style.left = '30%';
+    // Convert coordinates to pixels
+    const point1Position = latLonToPixels(point1Coords.lat, point1Coords.lon, mapWidth, mapHeight);
+    const point2Position = latLonToPixels(point2Coords.lat, point2Coords.lon, mapWidth, mapHeight);
+
+    // Set the position of point1 (converted to pixel values)
+    point1.style.top = `${point1Position.y}px`;
+    point1.style.left = `${point1Position.x}px`;
+
+    // Set the position of point2 (converted to pixel values)
+    point2.style.top = `${point2Position.y}px`;
+    point2.style.left = `${point2Position.x}px`;
 };
 
 const audioPlayer = document.getElementById('audio-player');
